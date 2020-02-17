@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+import Header from './Components/Header';
+import Body from './Components/Body';
+import Footer from './Components/Footer';
+
+import './assets/css/styles.css';
+
+export default class App extends Component {
+
+  state = {
+    item: '',
+    resultado: []
+  };
+
+  showItem = item => {
+    const url = `https://pixabay.com/api/?key=1732750-d45b5378879d1e877cd1d35a6&q=${item}`;
+    fetch(url)
+      .then(respuesta => respuesta.json())
+      .then(resultado => this.setState({ resultado: resultado.hits }));
+
+    this.setState({
+      item: item
+    });
+  };
+
+
+
+  render() {
+    return (
+      <React.Fragment>
+        <Header showItem={this.showItem} />
+        <Body item={this.state.item} resultado={this.state.resultado} />
+        <Footer />
+      </React.Fragment>
+    );
+  }
 }
-
-export default App;
