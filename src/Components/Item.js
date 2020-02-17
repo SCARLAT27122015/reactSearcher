@@ -5,7 +5,7 @@ export default class Item extends Component {
         const { item } = this.props;
         return (
             <div className="items">
-                <img src={item.previewURL} alt='test' />
+                <img src={item.previewURL} alt={item.id} />
             </div>
         );
     }

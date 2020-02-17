@@ -8,11 +8,11 @@ export default class Body extends Component {
             color: 'red'
         };
         return (
-            <main role="main" className="container" id="main_body">
+            <main class="cont">
                 <h1 className="mt-5">Item searcher</h1>
                 <div>
                     {
-                        this.props.item ? <p>Your item to search is:<span style={searched_style}> {this.props.item}</span></p> : <p>Please, enter an item to search.</p>
+                        this.props.item ? <p>Your searched for:<span style={searched_style}> {this.props.item}</span></p> : <p>Please, enter an item to search.</p>
                     }
 
                 </div>

@@ -1,4 +1,4 @@
-#main_body{
+.cont{
     margin-top: 80px !important;
 }
 
@@ -7,6 +7,11 @@
     transition: all .2s ease-in-out;
 }
 
+.container-contact{
+    border: 1px solid gray;
+    height: 900px;
+    padding: 20px;
+}
 
 
 .items:hover { transform: scale(1.1); }

@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-
-
 import Header from './Components/Header';
 import Body from './Components/Body';
 import Footer from './Components/Footer';
-
 import './assets/css/styles.css';
+
 
 export default class App extends Component {
 
